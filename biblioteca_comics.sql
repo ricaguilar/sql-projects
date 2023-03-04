@@ -182,6 +182,9 @@ INSERT INTO personajes VALUES(20, 'Iron Man');
 INSERT INTO personajes VALUES(21, 'Capitan America');
 INSERT INTO personajes VALUES(22, 'Doctor Doom');
 INSERT INTO personajes VALUES(23, 'Hulk');
+INSERT INTO personajes VALUES(24, 'Daredevil');
+INSERT INTO personajes VALUES(25, 'Ojo de Halcon');
+INSERT INTO personajes VALUES(26, '4 Fantasticos');
 
 INSERT INTO tebeo VALUES(
 	16, 'Los ultimos dias de la magia', 'Marvel Premiere', 
