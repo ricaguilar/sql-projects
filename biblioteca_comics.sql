@@ -167,6 +167,8 @@ INSERT INTO autores VALUES(31, 'Kieron', 'Gillen');
 INSERT INTO autores VALUES(32, 'Tom', 'Taylor');
 INSERT INTO autores VALUES(33, 'Greg', 'Pak');
 INSERT INTO autores VALUES(34, 'Larry', 'Hama');
+INSERT INTO autores VALUES(35, 'Alan', 'Moore');
+INSERT INTO autores VALUES(36, 'J. Michael', 'Straczynski');
 
 INSERT INTO personajes VALUES(10, 'Vengadores');
 INSERT INTO personajes VALUES(11, 'Nuevos Vengadores');
@@ -185,6 +187,7 @@ INSERT INTO personajes VALUES(23, 'Hulk');
 INSERT INTO personajes VALUES(24, 'Daredevil');
 INSERT INTO personajes VALUES(25, 'Ojo de Halcon');
 INSERT INTO personajes VALUES(26, '4 Fantasticos');
+INSERT INTO personajes VALUES(27, 'Watchmen');
 
 INSERT INTO tebeo VALUES(
 	16, 'Los ultimos dias de la magia', 'Marvel Premiere', 
@@ -377,3 +380,36 @@ INSERT INTO comic_personajes VALUES(
     (60, 60, 22),(61, 61, 22),(62, 62, 21),(63, 63, 15),(64, 64, 15),(65, 65, 20),
     (66, 66, 20),(67, 67, 10),(68, 68, 20),(69, 69, 23),(70, 70, 23
 );
+
+INSERT INTO comic_personajes VALUES(
+71,71,21),(72,72,21),(73,73,21),(74,74,21),(75,75,27);
+
+INSERT INTO comic_autor VALUES(
+71, 71, 19),(72, 72, 19),(73, 73, 19),(74, 74, 19),(75, 75, 36);
+
+INSERT INTO tebeo VALUES(
+	71, 'Capitan Anti-america', 'Marvel Now',
+	33.25, null, 'Marvel', 360, 'wishlist'),
+	(72, 'Heil Hydra', 'Marvel Now',
+	28.50, null, 'Marvel', 304, 'wishlist'),
+    (73, 'La construccion de un Imperio', 'Marvel Now',
+	33.25, null, 'Marvel', 336, 'wishlist'),
+    (74, 'Imperio Secreto', 'Marvel Now',
+	36.10, null, 'Marvel', 336, 'wishlist'),
+    (75, 'Buho Nocturno', 'Antes de Watchmen',
+	14.20, null, 'Marvel', 120, 'wishlist'
+);
+
+INSERT INTO tebeo VALUES(
+	76, 'The killing joke', null,
+	16.29, null, 'DC Comics', 96, 'wishlist'
+);
+
+INSERT INTO comic_personajes VALUES(76,76,7);
+INSERT INTO comic_autor VALUES(76, 76, 35);
+
+UPDATE tebeo SET editorial = 'DC Comics' WHERE id = 75;
+UPDATE tebeo SET coleccion = 'Edicion Deluxe' WHERE id = 76;
+
+SELECT * FROM tebeo;
+SELECT * FROM autores
