@@ -44,3 +44,10 @@ JOIN personajes p ON cp.personaje_id = p.id
 WHERE estado IN ('leido', 'no leido', 'wishlist')
 GROUP BY escritor
 ORDER BY total_comics DESC;
+
+-- Cual es el comic mas caro comprado? Ordenar por precios
+SELECT t.titulo, MAX(t.precio) AS precio_maximo
+FROM tebeo t
+WHERE estado IN ('leido', 'no leido')
+GROUP BY t.titulo
+ORDER BY precio_maximo DESC;
