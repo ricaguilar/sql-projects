@@ -169,6 +169,7 @@ INSERT INTO autores VALUES(33, 'Greg', 'Pak');
 INSERT INTO autores VALUES(34, 'Larry', 'Hama');
 INSERT INTO autores VALUES(35, 'Alan', 'Moore');
 INSERT INTO autores VALUES(36, 'J. Michael', 'Straczynski');
+INSERT INTO autores VALUES(37, 'Margaret', 'Stohl');
 
 INSERT INTO personajes VALUES(10, 'Vengadores');
 INSERT INTO personajes VALUES(11, 'Nuevos Vengadores');
@@ -188,6 +189,7 @@ INSERT INTO personajes VALUES(24, 'Daredevil');
 INSERT INTO personajes VALUES(25, 'Ojo de Halcon');
 INSERT INTO personajes VALUES(26, '4 Fantasticos');
 INSERT INTO personajes VALUES(27, 'Watchmen');
+INSERT INTO personajes VALUES(28, 'Spiderman Noir');
 
 INSERT INTO tebeo VALUES(
 	16, 'Los ultimos dias de la magia', 'Marvel Premiere', 
@@ -410,6 +412,15 @@ INSERT INTO comic_autor VALUES(76, 76, 35);
 
 UPDATE tebeo SET editorial = 'DC Comics' WHERE id = 75;
 UPDATE tebeo SET coleccion = 'Edicion Deluxe' WHERE id = 76;
+UPDATE tebeo SET estado = 'leido' WHERE id = 10;
+
+INSERT INTO tebeo VALUES(
+	77, 'Crepusculo en Babilonia', '100% Marvel',
+	12.35, null, 'Marvel', 129, 'wishlist'
+);
+
+INSERT INTO comic_personajes VALUES(77,77,28);
+INSERT INTO comic_autor VALUES(77, 77, 37);
 
 SELECT * FROM tebeo;
 SELECT * FROM autores
