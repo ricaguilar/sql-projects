@@ -42,6 +42,8 @@ CREATE TABLE personajes(
     PRIMARY KEY (id)
 );
 
+ALTER TABLE personajes MODIFY COLUMN nombre VARCHAR(25);
+
 CREATE TABLE comic_personajes(
 	id INT,
     comic_id INT,
@@ -170,6 +172,11 @@ INSERT INTO autores VALUES(34, 'Larry', 'Hama');
 INSERT INTO autores VALUES(35, 'Alan', 'Moore');
 INSERT INTO autores VALUES(36, 'J. Michael', 'Straczynski');
 INSERT INTO autores VALUES(37, 'Margaret', 'Stohl');
+INSERT INTO autores VALUES(38, 'Greg', 'Rucka');
+INSERT INTO autores VALUES(39, 'Stjepan', 'Sejic');
+INSERT INTO autores VALUES(40, 'Andrea', 'Sorrentino');
+INSERT INTO autores VALUES(41, 'Sean', 'Murphy');
+INSERT INTO autores VALUES(42, 'Garth', 'Ennis');
 
 INSERT INTO personajes VALUES(10, 'Vengadores');
 INSERT INTO personajes VALUES(11, 'Nuevos Vengadores');
@@ -190,6 +197,10 @@ INSERT INTO personajes VALUES(25, 'Ojo de Halcon');
 INSERT INTO personajes VALUES(26, '4 Fantasticos');
 INSERT INTO personajes VALUES(27, 'Watchmen');
 INSERT INTO personajes VALUES(28, 'Spiderman Noir');
+INSERT INTO personajes VALUES(29, 'Imposibles Vengadores');
+INSERT INTO personajes VALUES(30, 'Gotham Central');
+INSERT INTO personajes VALUES(31, 'Harley Quinn');
+INSERT INTO personajes VALUES(32, 'Ghost Rider');
 
 INSERT INTO tebeo VALUES(
 	16, 'Los ultimos dias de la magia', 'Marvel Premiere', 
@@ -413,6 +424,7 @@ INSERT INTO comic_autor VALUES(76, 76, 35);
 UPDATE tebeo SET editorial = 'DC Comics' WHERE id = 75;
 UPDATE tebeo SET coleccion = 'Edicion Deluxe' WHERE id = 76;
 UPDATE tebeo SET estado = 'leido' WHERE id = 10;
+UPDATE comic_personajes SET personaje_id = 29 WHERE id = 67;
 
 INSERT INTO tebeo VALUES(
 	77, 'Crepusculo en Babilonia', '100% Marvel',
@@ -421,6 +433,68 @@ INSERT INTO tebeo VALUES(
 
 INSERT INTO comic_personajes VALUES(77,77,28);
 INSERT INTO comic_autor VALUES(77, 77, 37);
+
+INSERT INTO tebeo VALUES(
+	78, 'Ragnarok', 'Marvel Now',
+	36.10, null, 'Marvel', 344, 'wishlist'),
+	(79, 'Naufrago en la dimension Z', 'Marvel Now',
+	24.70, null, 'Marvel', 264, 'wishlist'),
+    (80, 'El clavo de hierro', 'Marvel Now',
+	26.60, null, 'Marvel', 280, 'wishlist'),
+	(81, 'El soldado del mañana', 'Marvel Now',
+	26.60, null, 'Marvel', 264, 'wishlist'),
+    (82, 'Sombra roja', 'Marvel Now',
+	33.20, null, 'Marvel', 344, 'wishlist'),
+	(83, 'Todo muere', 'Marvel Now',
+	28.50, null, 'Marvel', 312, 'wishlist'),
+    (84, 'El ultimo evento blanco', 'Marvel Now',
+	27.50, null, 'Marvel', 288, 'wishlist'),
+    (85, 'La guerra de los reinos', 'Marvel Now',
+	24.70, null, 'Marvel', 200, 'wishlist'
+);
+
+INSERT INTO comic_personajes VALUES(78,78,29),(79,79,21),(80,80,21),(81,81,21),
+								(82,82,29),(83,83,10),(84,84,10),(85,85,null);
+INSERT INTO comic_autor VALUES(78, 78, 29),(79,79,29),(80,80,29),(81,81,29),
+							(82,82,29),(83,83,20),(84,84,20),(85,85,13);
+
+INSERT INTO tebeo VALUES(
+	86, 'Infierno en la tierra', null,
+	34.68, null, 'DC Comics', 416, 'wishlist'),
+	(87, 'Planetary', null,
+	38.00, null, 'DC Comics', 432, 'wishlist'),
+    (88, 'Planetary', null,
+	38.95, null, 'DC Comics', 440, 'wishlist'
+);
+
+INSERT INTO comic_autor VALUES(86, 86, 16),(87,87,10),(88,88,10);
+INSERT INTO comic_personajes VALUES(86,86,8),(87,87,8),(88,88,8);
+
+INSERT INTO tebeo VALUES(
+	89, 'In the line of duty', 'Gotham Central',
+	16.29, null, 'DC Comics', 235, 'wishlist'),
+	(90, 'Jokers and Madmen', 'Gotham Central',
+	21.07, null, 'DC Comics', 285, 'wishlist'),
+    (91, 'Corrigan', 'Gotham Central',
+	16.52, null, 'DC Comics', 221, 'wishlist'
+);
+
+INSERT INTO comic_autor VALUES(89, 89, 28),(90,90,28),(91,91,38);
+INSERT INTO comic_personajes VALUES(89,89,30),(90,90,30),(91,91,30);
+
+INSERT INTO tebeo VALUES(
+	92, 'Harleen', null,
+	23.28, null, 'DC Comics', 208, 'wishlist'),
+	(93, 'El impostor', null,
+	18.95, null, 'DC Comics', 168, 'wishlist'),
+    (94, 'La maldicion del caballero blanco', null,
+	27.55, null, 'DC Comics', 272, 'wishlist'),
+    (95, 'Autopista al infierno', 'Marvel Deluxe',
+	15.20, null, 'Marvel', 152, 'wishlist'
+);
+
+INSERT INTO comic_autor VALUES(92, 92, 39),(93,93,40),(94,94,41),(95,95,42);
+INSERT INTO comic_personajes VALUES(92,92,31),(93,93,7),(94,94,7),(95,95,32);
 
 SELECT * FROM tebeo;
 SELECT * FROM autores
