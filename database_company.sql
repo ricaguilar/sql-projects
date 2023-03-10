@@ -185,4 +185,39 @@ FROM employee_errors;
 SELECT first_name, UPPER(first_name)
 FROM employee_errors;
 
+--------
+
+select sum(salary) as total_salary from employee;
+
+select emp_id, sum(salary) as total_salary 
+from employee
+group by emp_id;
+
+select avg(salary) as average_salary from employee;
+select max(salary) as average_salary from employee;
+select max(salary) as average_salary from employee;
+
+select first_name, salary, rank() over(order by salary desc)as ranks from employee;
+select first_name, salary, row_number() over(order by birth_day)as num_fila from employee;
+select first_name, salary, dense_rank() over(order by salary desc)as dense_ranks from employee;
+
+describe employee;
+
+select date_format(birth_day, '%d-%m-%y') as date_value
+from employee;
+
+alter table employee rename column birth_day to birth_date;
+drop view fullname_employee;
+
+create view fullname_employee as
+select emp_id, first_name, last_name, birth_date, concat(first_name,' ',last_name) as full_name,
+salary
+from employee;
+
+select * from fullname_employee;
+use example;
+
+-- Take the first name out of the full name
+select substring_index(full_name,' ',1) as fname 
+from fullname_employee;
 

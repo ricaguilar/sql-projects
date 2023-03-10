@@ -177,6 +177,7 @@ INSERT INTO autores VALUES(39, 'Stjepan', 'Sejic');
 INSERT INTO autores VALUES(40, 'Andrea', 'Sorrentino');
 INSERT INTO autores VALUES(41, 'Sean', 'Murphy');
 INSERT INTO autores VALUES(42, 'Garth', 'Ennis');
+INSERT INTO autores VALUES(43, 'Keith', 'Giffen');
 
 INSERT INTO personajes VALUES(10, 'Vengadores');
 INSERT INTO personajes VALUES(11, 'Nuevos Vengadores');
@@ -201,6 +202,8 @@ INSERT INTO personajes VALUES(29, 'Imposibles Vengadores');
 INSERT INTO personajes VALUES(30, 'Gotham Central');
 INSERT INTO personajes VALUES(31, 'Harley Quinn');
 INSERT INTO personajes VALUES(32, 'Ghost Rider');
+INSERT INTO personajes VALUES(33, 'Spiderman 2099');
+INSERT INTO personajes VALUES(34, 'Daredevil');
 
 INSERT INTO tebeo VALUES(
 	16, 'Los ultimos dias de la magia', 'Marvel Premiere', 
@@ -495,6 +498,22 @@ INSERT INTO tebeo VALUES(
 
 INSERT INTO comic_autor VALUES(92, 92, 39),(93,93,40),(94,94,41),(95,95,42);
 INSERT INTO comic_personajes VALUES(92,92,31),(93,93,7),(94,94,7),(95,95,32);
+
+INSERT INTO tebeo VALUES(
+	96, 'Azul', '100% Marvel HC',
+	21.85, null, 'Marvel', 168, 'wishlist'),
+	(97, 'Exodo', '100% Marvel',
+	19.95, null, 'Marvel', 184, 'wishlist'),
+    (98, 'Born Again', 'Marvel Must-Have',
+	14.25, null, 'Marvel', 192, 'wishlist'),
+    (99, 'Aniquilacion', 'Marvel Must-Have',
+	17.10, null, 'Marvel', 184, 'wishlist'),
+    (100, 'De vuelta al negro', 'Marvel Deluxe',
+	19.00, null, 'Marvel', 128, 'wishlist'
+);
+
+INSERT INTO comic_autor VALUES(96,96,27),(97,97,12),(98,98,9),(99,99,43),(100,100,36);
+INSERT INTO comic_personajes VALUES(96,96,3),(97,97,33),(98,98,34),(99,99,null),(100,100,3);
 
 SELECT * FROM tebeo;
 SELECT * FROM autores
