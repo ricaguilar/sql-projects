@@ -51,3 +51,18 @@ FROM tebeo t
 WHERE estado IN ('leido', 'no leido')
 GROUP BY t.titulo
 ORDER BY precio_maximo DESC;
+
+UPDATE tebeo SET estado = 'leido' WHERE id = 11;
+
+CREATE VIEW vista_batman AS (
+	SELECT p.nombre AS personaje_grupo, t.titulo, t.coleccion, t.precio, 
+			CONCAT(a.nombre," ", a.apellido) AS autor
+	FROM tebeo t
+	JOIN comic_autor ca ON t.id = ca.comic_id
+	JOIN autores a ON ca.autor_id = a.id
+	JOIN comic_personajes cp ON t.id = cp.comic_id
+	JOIN personajes p ON cp.personaje_id = p.id
+	WHERE p.nombre = 'Batman');
+
+SELECT *
+FROM vista_batman
