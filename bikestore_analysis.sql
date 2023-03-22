@@ -9,7 +9,11 @@ select * from BikeStores.sales.staffs
 select * from BikeStores.sales.stores
 
 -- Sales volume and total revenue generated
-select ord.order_id, CONCAT(cus.first_name,' ', cus.last_name) as full_name, cus.city, cus.state, ord.order_date,
+select ord.order_id, 
+	CONCAT(cus.first_name,' ', cus.last_name) as full_name, 
+	cus.city, 
+	cus.state, 
+	ord.order_date,
 	SUM(ite.quantity) as 'total_units',
 	SUM(ite.quantity * ite.list_price) as 'revenue',
 	pro.product_name,
@@ -23,7 +27,7 @@ join production.products pro on ite.product_id = pro.product_id
 join production.categories cat on pro.category_id = cat.category_id
 join sales.stores sto on ord.store_id = sto.store_id
 join sales.staffs sta on ord.staff_id = sta.staff_id
-group by 
-	ord.order_id, CONCAT(cus.first_name,' ', cus.last_name), cus.city, cus.state, ord.order_date,
+group by ord.order_id, CONCAT(cus.first_name,' ', cus.last_name), cus.city, cus.state, ord.order_date,
 	pro.product_name, cat.category_name, sto.store_name, CONCAT(sta.first_name,' ', sta.last_name)
 
+use BikeStores
