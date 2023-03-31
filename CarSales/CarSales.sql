@@ -89,3 +89,27 @@ select CUSTOMERNAME, rfm_recency, rfm_monetary, rfm_frequency,
 	end rfm_Segment
 
 from #rfm
+
+-- What products are more often sold together?
+select distinct ORDERNUMBER, stuff(
+
+	(select ',' + PRODUCTCODE
+	from sales_data_sample as p
+	where ORDERNUMBER in 
+		(
+			select ORDERNUMBER 
+			from (
+				select ORDERNUMBER, count(*) as rn
+				from sales_data_sample
+				where status = 'Shipped'
+				group by ORDERNUMBER
+				) as m
+			where rn = 2
+		)
+		and p.ORDERNUMBER = s.ORDERNUMBER
+		for xml path ('')), 
+		
+		1, 1, '') as ProductCodes
+
+from sales_data_sample as s
+order by 2 desc
