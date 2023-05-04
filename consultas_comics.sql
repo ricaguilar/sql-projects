@@ -79,3 +79,16 @@ FROM vista_batman;
 
 SELECT *
 FROM vista_sp;
+
+CREATE TEMPORARY TABLE TEMP
+	SELECT p.nombre AS personaje, t.titulo, t.coleccion, t.precio, 
+			CONCAT(a.nombre," ", a.apellido) AS autor
+	FROM tebeo t
+	JOIN comic_autor ca ON t.id = ca.comic_id
+	JOIN autores a ON ca.autor_id = a.id
+	JOIN comic_personajes cp ON t.id = cp.comic_id
+	JOIN personajes p ON cp.personaje_id = p.id
+	WHERE p.nombre = 'Vengadores';
+    
+SELECT * FROM TEMP;
+DROP TABLE TEMP;
