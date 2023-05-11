@@ -524,3 +524,28 @@ INSERT INTO tebeo VALUES(
     
 INSERT INTO comic_autor VALUES(101,101,44);
 INSERT INTO comic_personajes VALUES(101,101,35);
+
+INSERT INTO tebeo VALUES(
+	102, 'Legado', 'Aniquilacion',
+	17.10, null, 'Marvel', 160, 'wishlist');
+    
+INSERT INTO autores VALUES(45, 'Dan', 'Abnett');
+INSERT INTO personajes VALUES(36, 'Guardianes de la Galaxia');
+INSERT INTO comic_autor VALUES(102,102,45);
+INSERT INTO comic_personajes VALUES(102,102,36);
+
+INSERT INTO tebeo VALUES(
+	103, 'EL MIEDO NO EXISTE', 'THE HIGH REPUBLIC',
+	16.10, null, 'Planeta Comic', 136, 'wishlist'),
+    (104, 'LUZ DE LOS JEDI', 'THE HIGH REPUBLIC',
+	20.90, null, 'Planeta Comic', 432, 'wishlist'),
+	(105, 'ESTRELLA CAIDA', 'THE HIGH REPUBLIC',
+	20.90, null, 'Planeta Comic', 400, 'wishlist'),
+    (106, 'EL CORAZON DE LOS DRENGIR', 'THE HIGH REPUBLIC',
+	16.10, null, 'Planeta Comic', 128, 'wishlist')
+;
+
+INSERT INTO autores VALUES(46, 'Cavan', 'Scott'),(47, 'Charles', 'Soule'),(48, 'Claudia', 'Gray');
+INSERT INTO personajes VALUES(37, 'Star Wars');
+INSERT INTO comic_autor VALUES(103,103,46),(104,104,47),(105,105,48),(106,106,46);
+INSERT INTO comic_personajes VALUES(103,103,37),(104,104,37),(105,105,37),(106,106,37);
