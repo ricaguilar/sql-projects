@@ -173,6 +173,7 @@ INSERT INTO autores VALUES(40, 'Andrea', 'Sorrentino');
 INSERT INTO autores VALUES(41, 'Sean', 'Murphy');
 INSERT INTO autores VALUES(42, 'Garth', 'Ennis');
 INSERT INTO autores VALUES(43, 'Keith', 'Giffen');
+INSERT INTO autores VALUES(44, 'Keanu', 'Reeves');
 
 INSERT INTO personajes VALUES(10, 'Vengadores');
 INSERT INTO personajes VALUES(11, 'Nuevos Vengadores');
@@ -199,6 +200,7 @@ INSERT INTO personajes VALUES(31, 'Harley Quinn');
 INSERT INTO personajes VALUES(32, 'Ghost Rider');
 INSERT INTO personajes VALUES(33, 'Spiderman 2099');
 INSERT INTO personajes VALUES(34, 'Daredevil');
+INSERT INTO personajes VALUES(35, 'B.');
 
 INSERT INTO tebeo VALUES(
 	16, 'Los ultimos dias de la magia', 'Marvel Premiere', 
@@ -511,4 +513,14 @@ INSERT INTO comic_autor VALUES(96,96,27),(97,97,12),(98,98,9),(99,99,43),(100,10
 INSERT INTO comic_personajes VALUES(96,96,3),(97,97,33),(98,98,34),(99,99,null),(100,100,3);
 
 SELECT * FROM tebeo;
-SELECT * FROM autores
+SELECT * FROM autores;
+
+ALTER TABLE tebeo
+MODIFY COLUMN editorial VARCHAR(50);
+
+INSERT INTO tebeo VALUES(
+	101, 'BRZRKR VOLUMEN UNO', null,
+	17.05, null, 'Planeta Comic', 152, 'wishlist');
+    
+INSERT INTO comic_autor VALUES(101,101,44);
+INSERT INTO comic_personajes VALUES(101,101,35);
