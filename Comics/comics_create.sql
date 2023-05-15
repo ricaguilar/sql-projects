@@ -549,3 +549,6 @@ INSERT INTO autores VALUES(46, 'Cavan', 'Scott'),(47, 'Charles', 'Soule'),(48, '
 INSERT INTO personajes VALUES(37, 'Star Wars');
 INSERT INTO comic_autor VALUES(103,103,46),(104,104,47),(105,105,48),(106,106,46);
 INSERT INTO comic_personajes VALUES(103,103,37),(104,104,37),(105,105,37),(106,106,37);
+
+UPDATE tebeo SET coleccion = 'Saga de Grant Morrison' WHERE coleccion = 'Batman e hijo';
+UPDATE tebeo SET coleccion = 'Detective Comics' WHERE titulo = 'La ascencion de los hombres murcielago'
