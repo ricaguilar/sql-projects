@@ -54,7 +54,7 @@ ORDER BY precio_maximo DESC;
 
 UPDATE tebeo SET estado = 'leido' WHERE id = 11;
 
-CREATE VIEW vista_batman AS (
+CREATE OR REPLACE VIEW vista_batman AS (
 	SELECT p.nombre AS personaje_grupo, t.titulo, t.coleccion, t.precio, 
 			CONCAT(a.nombre," ", a.apellido) AS autor
 	FROM tebeo t
@@ -64,7 +64,7 @@ CREATE VIEW vista_batman AS (
 	JOIN personajes p ON cp.personaje_id = p.id
 	WHERE p.nombre = 'Batman');
 
-CREATE OR REPLACE VIEW vista_sp AS
+CREATE OR REPLACE VIEW vista_sp AS (
 	SELECT p.nombre AS personaje, t.titulo, t.coleccion, t.precio, 
 			CONCAT(a.nombre," ", a.apellido) AS autor
 	FROM tebeo t
@@ -72,10 +72,12 @@ CREATE OR REPLACE VIEW vista_sp AS
 	JOIN autores a ON ca.autor_id = a.id
 	JOIN comic_personajes cp ON t.id = cp.comic_id
 	JOIN personajes p ON cp.personaje_id = p.id
-	WHERE p.nombre = 'Spiderman';
+	WHERE p.nombre = 'Spiderman')
+;
 
 SELECT *
-FROM vista_batman;
+FROM vista_batman
+ORDER BY coleccion DESC;
 
 SELECT *
 FROM vista_sp;
