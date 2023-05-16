@@ -174,6 +174,11 @@ INSERT INTO autores VALUES(41, 'Sean', 'Murphy');
 INSERT INTO autores VALUES(42, 'Garth', 'Ennis');
 INSERT INTO autores VALUES(43, 'Keith', 'Giffen');
 INSERT INTO autores VALUES(44, 'Keanu', 'Reeves');
+INSERT INTO autores VALUES(45, 'Peter J.', 'Tomasi');
+INSERT INTO autores VALUES(46, 'Tom', 'King');
+INSERT INTO autores VALUES(47, 'David', 'Hine');
+
+SELECT * FROM autores;
 
 INSERT INTO personajes VALUES(10, 'Vengadores');
 INSERT INTO personajes VALUES(11, 'Nuevos Vengadores');
@@ -551,4 +556,52 @@ INSERT INTO comic_autor VALUES(103,103,46),(104,104,47),(105,105,48),(106,106,46
 INSERT INTO comic_personajes VALUES(103,103,37),(104,104,37),(105,105,37),(106,106,37);
 
 UPDATE tebeo SET coleccion = 'Saga de Grant Morrison' WHERE coleccion = 'Batman e hijo';
-UPDATE tebeo SET coleccion = 'Detective Comics' WHERE titulo = 'La ascencion de los hombres murcielago'
+UPDATE tebeo SET coleccion = 'Detective Comics' WHERE titulo = 'La ascencion de los hombres murcielago';
+
+INSERT INTO tebeo VALUES(
+	107, 'El guante negro', 'Saga de Grant Morrison',
+	17.05, null, 'DC Comics', 240, 'wishlist'),
+    (108, 'Arkham renacido', 'Detective Comics',
+	29.45, null, 'DC Comics', 288, 'wishlist'),
+	(109, 'Espejo oscuro', 'Detective Comics',
+	18.00, null, 'DC Comics', 144, 'wishlist'),
+    (110, 'La llave maestra', 'Detective Comics',
+	18.95, null, 'DC Comics', 168, 'wishlist'),
+    (111, 'R.I.P', 'Saga de Grant Morrison',
+	31.35, null, 'DC Comics', 312, 'wishlist'),
+    (112, 'La muerte de la familia', 'Saga de Scott Snyder',
+	18.95, null, 'DC Comics', 176, 'wishlist'),
+	(113, 'Ciudad oscura', 'Saga de Scott Snyder',
+	25.65, null, 'DC Comics', 176, 'wishlist'),
+    (114, 'La liga de las sombras', 'Detective Comics',
+	20.43, null, 'DC Comics', 184, 'wishlist'),
+    (115, 'El sindicato de victimas', 'Detective Comics',
+	18.95, null, 'DC Comics', 168, 'wishlist'),
+    (116, 'La guerra de bromas y acertijos', 'Saga de Tom King',
+	21.38, null, 'DC Comics', 200, 'wishlist'),
+    (117, 'La caida de los hombres murcielago', 'Detective Comics',
+	20.43, null, 'DC Comics', 144, 'wishlist'),
+    (118, 'Saludos desde Gotham', 'Detective Comics',
+	17.05, null, 'DC Comics', 144, 'wishlist'),
+    (119, 'Un mundo frio y oscuro', 'Detective Comics',
+	18.00, null, 'DC Comics', 144, 'wishlist'),
+    (120, 'La guerra del Joker Parte 1', 'Saga de James Tynion IV',
+	26.60, null, 'DC Comics', 256, 'wishlist')
+;
+
+INSERT INTO autores VALUES(49, 'Peter J.', 'Tomasi');
+INSERT INTO autores VALUES(50, 'Tom', 'King');
+INSERT INTO autores VALUES(51, 'David', 'Hine');
+
+INSERT INTO comic_autor VALUES(107,107,24),(108,108,51),(109,109,22),(110,110,22),
+								(111,111,24),(112,112,22),(113,113,22),(114,114,22),
+                                (115,115,23),(116,116,50),(117,117,23),(118,118,49),
+                                (119,119,49),(120,120,23);
+                                
+INSERT INTO comic_personajes VALUES(107,107,7),(108,108,7),(109,109,7),(110,110,7),
+									(111,111,7),(112,112,7),(113,113,7),(114,114,7),
+                                    (115,115,7),(116,116,7),(117,117,7),(118,118,7),
+                                    (119,119,7),(120,120,7);
+
+SELECT *
+FROM tebeo
