@@ -73,7 +73,7 @@ CREATE OR REPLACE VIEW vista_sp AS (
 	JOIN comic_personajes cp ON t.id = cp.comic_id
 	JOIN personajes p ON cp.personaje_id = p.id
 	WHERE p.nombre = 'Spiderman')
-;
+    ;
 
 SELECT *
 FROM vista_batman
@@ -83,6 +83,24 @@ SELECT *
 FROM vista_sp;
 
 CREATE TEMPORARY TABLE TEMP
+	SELECT t.id, p.nombre AS personaje, t.titulo, t.coleccion, t.precio, 
+			CONCAT(a.nombre," ", a.apellido) AS autor
+	FROM tebeo t
+	JOIN comic_autor ca ON t.id = ca.comic_id
+	JOIN autores a ON ca.autor_id = a.id
+	JOIN comic_personajes cp ON t.id = cp.comic_id
+	JOIN personajes p ON cp.personaje_id = p.id
+	WHERE p.nombre = 'Guerreros Secretos';
+    
+SELECT * FROM TEMP
+ORDER BY precio DESC;
+
+DROP TABLE TEMP;
+
+SELECT * FROM tebeo
+WHERE coleccion = 'Marvel Saga';
+
+CREATE OR REPLACE VIEW vista_cl AS (
 	SELECT p.nombre AS personaje, t.titulo, t.coleccion, t.precio, 
 			CONCAT(a.nombre," ", a.apellido) AS autor
 	FROM tebeo t
@@ -90,9 +108,9 @@ CREATE TEMPORARY TABLE TEMP
 	JOIN autores a ON ca.autor_id = a.id
 	JOIN comic_personajes cp ON t.id = cp.comic_id
 	JOIN personajes p ON cp.personaje_id = p.id
-	WHERE p.nombre = 'Vengadores';
-    
-SELECT * FROM TEMP;
-DROP TABLE TEMP;
+	WHERE p.nombre = 'Caballero Luna')
+    ;
 
-SELECT * FROM tebeo
+SELECT *
+FROM vista_cl
+ORDER BY coleccion DESC;
