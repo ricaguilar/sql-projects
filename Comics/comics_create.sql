@@ -603,5 +603,36 @@ INSERT INTO comic_personajes VALUES(107,107,7),(108,108,7),(109,109,7),(110,110,
                                     (115,115,7),(116,116,7),(117,117,7),(118,118,7),
                                     (119,119,7),(120,120,7);
 
-SELECT *
-FROM tebeo
+SELECT * FROM tebeo;
+
+UPDATE tebeo SET coleccion = 'Tomo unico' WHERE titulo = 'Year one';
+UPDATE tebeo SET coleccion = 'Authority' WHERE titulo = 'Authority';
+UPDATE tebeo SET coleccion = 'Marvel Omnibus' WHERE titulo = 'La senda de las brujas';
+
+UPDATE tebeo SET coleccion = 'Tomo unico' WHERE titulo = 'El ultimo caballero de la tierra';
+UPDATE tebeo SET coleccion = 'Tomo unico' WHERE titulo = 'La guerra del joker';
+UPDATE tebeo SET coleccion = 'Tomo unico' WHERE titulo = 'Silencio';
+UPDATE tebeo SET coleccion = 'Planetary' WHERE titulo = 'Planetary';
+
+UPDATE tebeo SET coleccion = 'Authority' WHERE titulo = 'Infierno en la tierra';
+
+UPDATE tebeo SET coleccion = 'DC Black Label' WHERE titulo = 'Harleen';
+UPDATE tebeo SET coleccion = 'DC Black Label' WHERE titulo = 'El impostor';
+UPDATE tebeo SET coleccion = 'DC Black Label' WHERE titulo = 'La maldicion del caballero blanco';
+UPDATE tebeo SET coleccion = 'BRZRKR' WHERE titulo = 'BRZRKR VOLUMEN UNO';
+
+INSERT INTO tebeo VALUES(
+	121, 'Despierta a la bestia', 'Marvel Saga',
+	16.15, null, 'Marvel', 152, 'wishlist'),
+    (122, 'El ultimo asalto de los comandos aulladores', 'Marvel Saga',
+	19.00, null, 'Marvel', 200, 'wishlist'),
+	(123, 'Circulos dentro de circulos', 'Marvel Saga',
+	15.20, null, 'Marvel', 144, 'wishlist')
+;
+
+INSERT INTO comic_autor VALUES(121,121,20),(122,108,20),(123,123,20);
+INSERT INTO comic_personajes VALUES(121,121,17),(122,108,17),(123,123,17);
+
+SELECT * FROM autores;
+SELECT * FROM personajes;
+
