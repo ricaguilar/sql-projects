@@ -592,6 +592,7 @@ INSERT INTO tebeo VALUES(
 INSERT INTO autores VALUES(49, 'Peter J.', 'Tomasi');
 INSERT INTO autores VALUES(50, 'Tom', 'King');
 INSERT INTO autores VALUES(51, 'David', 'Hine');
+INSERT INTO autores VALUES(52, 'Kia', 'Asamiya');
 
 INSERT INTO comic_autor VALUES(107,107,24),(108,108,51),(109,109,22),(110,110,22),
 								(111,111,24),(112,112,22),(113,113,22),(114,114,22),
@@ -635,4 +636,12 @@ INSERT INTO comic_personajes VALUES(121,121,17),(122,108,17),(123,123,17);
 
 SELECT * FROM autores;
 SELECT * FROM personajes;
+SELECT * FROM tebeo;
 
+INSERT INTO tebeo VALUES(
+	124, 'El hijo de los sueños', 'Tomo unico',
+	38.00, null, 'DC Comics', 352, 'wishlist')
+;
+    
+INSERT INTO comic_autor VALUES(124,124,52);
+INSERT INTO comic_personajes VALUES(124,124,7);
